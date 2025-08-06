@@ -37,17 +37,15 @@ export default function Investimento() {
 
   function calcularInvestimento() {
     if (mensal && meses && taxaJuros) {
-      // Convertendo as entradas para números
-      const mensalValor = parseFloat(mensal);  // Aporte mensal
-      const t = parseInt(meses);  // Número de meses
-      const i = parseFloat(taxaJuros) / 100;  // Taxa de juros mensal em decimal
+    
+      const mensalValor = parseFloat(mensal); 
+      const t = parseInt(meses); 
+      const i = parseFloat(taxaJuros) / 100;  
 
-      let montanteR = 0;  // Montante acumulado
+      let montanteR = 0; 
 
-      // Calculando o valor total sem juros (somente aportes)
       const valorTotalSemJuros = mensalValor * t;
 
-      // Laço de repetição para calcular o valor total com juros compostos
       for (let j = 1; j <= t; j++) {
         montanteR = montanteR + montanteR * i + mensalValor;
       }
